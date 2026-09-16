@@ -67,7 +67,7 @@ export default function Home() {
         <div className="hero-grid">
           <div className="hero-content">
             <p className="eyebrow">PREARRANGED PRIVATE TRANSPORTATION</p>
-            <h1>Premium private transportation, compared in one place.</h1>
+            <h1>Premium private transportation, <span className="keep-line">compared in one place.</span></h1>
             <p className="tagline">Compare Premium Rides. Select Your Ride.</p>
             <p className="hero-copy">Plan before the trip. Request your ride, compare up to three quotes from participating transportation providers, and choose the option that fits your trip.</p>
             <div className="hero-actions">
