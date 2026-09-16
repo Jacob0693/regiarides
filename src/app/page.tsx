@@ -29,7 +29,7 @@ export default function Home() {
         <div className="hero-glow" aria-hidden="true" />
         <p className="eyebrow">REGIA RIDES · PREARRANGED TRANSPORTATION</p>
         <h1>Premium Private Transportation, Compared in One Place</h1>
-        <p className="tagline">Compare Black Rides. Select Your Ride.</p>
+        <p className="tagline">Compare Premium Rides. Select Your Ride.</p>
         <p className="hero-copy">Plan your transportation before the trip. Request your ride, compare up to three quotes from participating licensed transportation providers, and select based on the vehicle, provider, service options, and price.</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#request">Get Quotes</a>
