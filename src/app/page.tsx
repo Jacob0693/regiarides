@@ -17,7 +17,8 @@ const steps = [
 
 const vehicles = [
   { title: "Black Sedan", description: "For smaller parties and lighter luggage needs.", image: "/images/regia-black-sedan.webp", alt: "Black executive sedan at a Los Angeles hotel entrance at blue hour" },
-  { title: "Premium SUV", description: "More passenger and luggage flexibility for many trips.", image: "/images/regia-premium-suv.webp", alt: "Black full-size premium SUV at a Los Angeles hotel entrance" },
+  { title: "Standard SUV", description: "More passenger and luggage flexibility for many trips.", image: "/images/regia-standard-suv.webp", alt: "Black standard SUV at a Los Angeles hotel entrance at blue hour" },
+  { title: "Full-Size Premium SUV", description: "A more spacious, elevated option for premium travel and additional luggage needs.", image: "/images/regia-premium-suv.webp", alt: "Black full-size premium SUV at a Los Angeles hotel entrance" },
   { title: "Luxury Van / Sprinter", description: "Additional cabin and cargo flexibility for groups, subject to configuration.", image: "/images/regia-luxury-van.webp", alt: "Black luxury passenger van prepared for executive group transportation" },
 ] as const;
 
