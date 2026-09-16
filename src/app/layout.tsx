@@ -8,12 +8,12 @@ const indexable = process.env.NEXT_PUBLIC_SITE_INDEXABLE === "true";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://regiarides.com"),
-  title: { default: "Regia Rides | Premium Private Transportation", template: "%s | Regia Rides" },
-  description: "Request up to three quotes from participating licensed transportation providers for airport transfers, point-to-point rides, multiple transfers, and more.",
+  title: { default: "Premium Private Transportation Quotes | Regia Rides", template: "%s | Regia Rides" },
+  description: "Request up to three quotes from participating transportation providers. Compare premium vehicles, included service options, and prices, then select your ride.",
   applicationName: "Regia Rides",
   alternates: { canonical: "/" },
-  openGraph: { type: "website", url: "https://regiarides.com", siteName: "Regia Rides", title: "Premium Private Transportation, Compared in One Place", description: "Request, compare, and select prearranged private transportation from participating providers." },
-  twitter: { card: "summary_large_image", title: "Regia Rides", description: "Premium private transportation, compared in one place." },
+  openGraph: { type: "website", url: "https://regiarides.com", siteName: "Regia Rides", title: "Premium Private Transportation, Compared in One Place", description: "Compare premium rides from participating transportation providers and select the option that fits your trip." },
+  twitter: { card: "summary_large_image", title: "Regia Rides", description: "Compare Premium Rides. Select Your Ride." },
   robots: indexable ? { index: true, follow: true } : { index: false, follow: false, noarchive: true },
 };
 
