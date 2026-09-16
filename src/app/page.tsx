@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const serviceTypes = [
   { number: "01", title: "Airport Transfer", description: "Prearranged airport pickup or drop-off with the trip details providers need to quote accurately.", detail: "Flight-aware request details" },
   { number: "02", title: "Point-to-Point", description: "One scheduled transfer between an airport, hotel, home, office, venue, or other destination.", detail: "One pickup · One destination" },
@@ -14,9 +16,9 @@ const steps = [
 ] as const;
 
 const vehicles = [
-  ["Sedan", "For smaller parties and lighter luggage needs."],
-  ["Standard SUV", "More passenger and luggage flexibility for many trips."],
-  ["Full-Size SUV", "Additional cabin and cargo capacity, subject to configuration."],
+  { title: "Black Sedan", description: "For smaller parties and lighter luggage needs.", image: "/images/regia-black-sedan.webp", alt: "Black executive sedan at a Los Angeles hotel entrance at blue hour" },
+  { title: "Premium SUV", description: "More passenger and luggage flexibility for many trips.", image: "/images/regia-premium-suv.webp", alt: "Black full-size premium SUV at a Los Angeles hotel entrance" },
+  { title: "Luxury Van / Sprinter", description: "Additional cabin and cargo flexibility for groups, subject to configuration.", image: "/images/regia-luxury-van.webp", alt: "Black luxury passenger van prepared for executive group transportation" },
 ] as const;
 
 const audiences = [
@@ -42,17 +44,6 @@ function CheckIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>;
 }
 
-function VehicleOutline() {
-  return (
-    <svg className="vehicle-outline" viewBox="0 0 760 260" aria-hidden="true">
-      <path d="M72 176c18-34 39-64 72-79 58-27 190-34 284-24 62 6 111 22 151 55l55 15c31 8 48 28 54 49H66c-3-6-1-11 6-16Z" />
-      <path d="M187 98c44-25 112-31 186-30 49 1 94 10 135 30H187Z" />
-      <circle cx="191" cy="191" r="40" /><circle cx="566" cy="191" r="40" />
-      <path d="M104 157h55m443 0h51M372 74v99M515 101l-36 72" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <main>
@@ -71,6 +62,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
+        <Image className="hero-image" src="/images/regia-hotel-arrival.webp" alt="" fill priority sizes="100vw" />
         <div className="hero-atmosphere" aria-hidden="true" />
         <div className="hero-grid">
           <div className="hero-content">
@@ -110,7 +102,6 @@ export default function Home() {
             <p className="panel-note"><span aria-hidden="true">●</span> Next: choose the transportation format for your trip.</p>
           </aside>
         </div>
-        <div className="hero-visual" aria-hidden="true"><div className="road-glow" /><VehicleOutline /></div>
       </section>
 
       <section className="service-level-section" id="service-levels">
@@ -124,6 +115,7 @@ export default function Home() {
             <a href="#quote-entry">Choose Black Ride <ArrowIcon /></a>
           </article>
           <article className="level-card level-card-signature">
+            <Image className="level-card-image" src="/images/regia-signature-cabin.webp" alt="Premium black SUV passenger cabin prepared for Signature Chauffeur service" fill sizes="(max-width: 760px) 100vw, 50vw" />
             <div><p className="card-kicker">SIGNATURE CHAUFFEUR · CURATED</p><h3>A more personalized chauffeur experience.</h3><p>Request premium service from a curated subset of qualified providers, drivers, and vehicles.</p></div>
             <ul><li><CheckIcon /> Professional chauffeur presentation</li><li><CheckIcon /> Cadillac Escalade recommended</li><li><CheckIcon /> Personalized service requests</li></ul>
             <a href="#quote-entry">Choose Signature <ArrowIcon /></a>
@@ -167,7 +159,7 @@ export default function Home() {
       <section className="section vehicle-section" id="fleet">
         <div className="vehicle-heading"><p className="eyebrow">VEHICLE CATEGORIES</p><h2>Space for the people and luggage that matter.</h2><p>Capacity depends on the actual configuration quoted by the provider. Enter accurate passenger and luggage counts so providers can recommend the right category.</p></div>
         <div className="vehicle-list">
-          {vehicles.map(([title, description], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{description}</p></div><ArrowIcon /></article>)}
+          {vehicles.map((vehicle, index) => <article key={vehicle.title}><div className="vehicle-thumb"><Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 760px) 42vw, 190px" /></div><span>0{index + 1}</span><div><h3>{vehicle.title}</h3><p>{vehicle.description}</p></div><ArrowIcon /></article>)}
         </div>
       </section>
 
@@ -177,7 +169,10 @@ export default function Home() {
       </section>
 
       <section className="provider-section" id="providers">
-        <div className="provider-visual" aria-hidden="true"><span>REGIA</span><small>PROVIDER NETWORK</small></div>
+        <div className="provider-visual">
+          <Image src="/images/regia-airport-chauffeur.webp" alt="Professional chauffeur greeting a business traveler beside a black executive sedan at an airport" fill sizes="(max-width: 1100px) 100vw, 50vw" />
+          <div className="provider-photo-label"><span>PREARRANGED</span><small>AIRPORT · BUSINESS · PRIVATE</small></div>
+        </div>
         <div className="provider-content">
           <p className="eyebrow">FOR TRANSPORTATION PROVIDERS</p>
           <h2>Bring your service to customers planning ahead.</h2>
@@ -195,7 +190,8 @@ export default function Home() {
       </section>
 
       <section className="final-cta">
-        <p className="eyebrow">READY WHEN YOUR PLANS ARE</p><h2>Compare premium transportation quotes for your next trip.</h2><a className="button button-primary" href="#quote-entry">Get Quotes <ArrowIcon /></a>
+        <Image className="final-cta-image" src="/images/regia-final-cta.webp" alt="" fill sizes="100vw" />
+        <div className="final-cta-content"><p className="eyebrow">READY WHEN YOUR PLANS ARE</p><h2>Compare premium transportation quotes for your next trip.</h2><a className="button button-primary" href="#quote-entry">Get Quotes <ArrowIcon /></a></div>
       </section>
 
       <footer>
