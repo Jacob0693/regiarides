@@ -101,3 +101,36 @@ footer{padding:70px max(clamp(24px,4.5vw,72px),calc((100vw - var(--max-width))/2
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+
+/* 2026-09-17 visual balance refinement */
+.service-card{min-height:410px;padding:32px}
+.service-card:before{background:linear-gradient(to bottom,rgba(8,8,8,.08) 0%,rgba(8,8,8,.26) 40%,rgba(8,8,8,.88) 78%,rgba(8,8,8,.97) 100%),linear-gradient(90deg,rgba(8,8,8,.12),transparent)}
+.service-card-image{opacity:.82}.service-card:hover .service-card-image{opacity:.92}
+.service-number{color:#e0d1aa;font-size:.76rem;font-weight:600}
+.service-card h3{font-size:clamp(1.85rem,2.1vw,2.25rem);letter-spacing:-.018em;line-height:1}
+.service-card p{color:#aaa9a5;font-size:.94rem;line-height:1.62}
+.service-footer{border-top-color:rgba(255,255,255,.18);color:#c4c3bf;font-size:.8rem}
+.provider-photo-label{bottom:38px;left:42px;padding:18px 20px;border:1px solid rgba(255,255,255,.12);background:rgba(8,8,8,.68);backdrop-filter:blur(8px)}
+.provider-photo-label span{font-size:.78rem}.provider-photo-label small{margin-top:9px;font-size:.66rem;letter-spacing:.21em}
+.provider-content{max-width:760px;padding:82px clamp(42px,6vw,96px)}
+.provider-content>p:not(.eyebrow){max-width:650px;color:#bdbdb9;font-size:1.08rem;line-height:1.72}
+.provider-content ul{gap:15px;margin:31px 0 36px}.provider-content li{align-items:flex-start;gap:11px;color:#d0d0cd;font-size:1rem;line-height:1.5}
+.provider-content li svg{width:16px;min-width:16px;margin-top:3px}.provider-content .button{min-height:56px;padding:0 28px;font-size:.94rem}
+.faq-heading>p:last-child{max-width:430px;color:#c4c4c0;font-size:1.08rem;line-height:1.65}
+.faq-list summary{min-height:100px;font-size:1.25rem;font-weight:540;line-height:1.4}
+.faq-list summary i{width:20px;height:20px}.faq-list summary i:before,.faq-list summary i:after{top:9px;width:16px;background:#bbb}
+.faq-list details p{max-width:780px;margin:-2px 48px 34px 0;color:#aaa9a5;font-size:1.08rem;line-height:1.72}
+.final-cta .eyebrow{font-size:.74rem}.final-cta .button{min-height:56px;padding:0 30px;font-size:.92rem}
+.footer-main>div:first-child>p{max-width:390px;font-size:1rem;line-height:1.65}
+.footer-links strong{font-size:.84rem}.footer-links a{font-size:.9rem}.footer-pending{font-size:.84rem}
+.footer-legal p{max-width:1000px;font-size:.8rem;line-height:1.7}.footer-legal small{font-size:.76rem}
+@media(min-width:1101px){.faq-section{grid-template-columns:minmax(320px,.72fr) minmax(540px,1.28fr);gap:clamp(60px,8vw,125px);padding-top:112px;padding-bottom:112px}}
+@media(max-width:760px){
+  .service-card{min-height:340px;padding:25px}.service-card h3{font-size:1.85rem}.service-card p{font-size:.94rem}
+  .provider-photo-label{bottom:20px;left:20px;padding:14px 16px}.provider-content{padding:72px 20px}
+  .provider-content>p:not(.eyebrow){font-size:1rem}.provider-content li{font-size:.94rem}
+  .faq-list summary{min-height:88px;font-size:1.06rem}.faq-list details p{font-size:.98rem}
+  .footer-main>div:first-child>p{font-size:.94rem}.footer-links a{font-size:.86rem}
+  .footer-legal p{font-size:.75rem}.footer-legal small{font-size:.72rem}
+}
