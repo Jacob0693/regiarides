@@ -151,3 +151,25 @@ footer{padding:70px max(clamp(24px,4.5vw,72px),calc((100vw - var(--max-width))/2
 .audience-section{background:var(--black)}.audience-grid{gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}.audience-grid article{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent}
 .how-section{background:var(--black);color:var(--white)}.how-section .eyebrow{color:var(--accent)}.step-grid{gap:0;border-color:var(--line);background:transparent}.step-card{border-right:1px solid var(--line);background:transparent}.step-card:last-child{border-right:0}.step-card>span{color:var(--accent)}.step-card p{color:#aaa9a5}
 @media(max-width:760px){.audience-grid,.step-grid{border-left:1px solid var(--line)}.step-card{border-right:0;border-bottom:1px solid var(--line)}.step-card:last-child{border-bottom:0}}
+
+
+/* Subtle full-width tonal rhythm inspired by premium editorial sites. */
+:root{--black:#090a0b;--near-black:#0f1012;--charcoal:#151619;--charcoal-light:#1b1d20;--surface-deep:#0c0d0f;--surface-graphite:#131519;--surface-mid:#17191d}
+body,html{background:var(--black)}
+.service-level-section,.section,.trust-section,.faq-section{position:relative;isolation:isolate;background:transparent}
+.service-level-section:before,.section:before,.trust-section:before,.faq-section:before{position:absolute;z-index:-1;inset:0 calc(50% - 50vw);content:""}
+.service-level-section:before{background:var(--surface-deep)}
+#services:before{background:var(--surface-graphite)}
+.audience-section:before{background:#0b0c0e}
+.how-section{background:var(--surface-mid)}
+.vehicle-section:before{background:var(--surface-deep)}
+.trust-section:before{background:var(--surface-graphite)}
+.provider-section{background:#111316}.provider-content{background:#15171a}
+.faq-section:before{background:#0d0e10}
+footer{background:#111317}
+.audience-section,.step-card,.audience-grid article{background:transparent}
+
+/* Framed comparison cards for scannable editorial content. */
+.audience-grid{gap:18px;border:0}.audience-grid article{min-height:320px;padding:36px;border:1px solid rgba(255,255,255,.18);background:#111316}
+.step-grid{gap:18px;border:0;background:transparent}.step-card,.step-card:last-child{min-height:310px;padding:36px;border:1px solid rgba(255,255,255,.18);background:#131519}
+@media(max-width:760px){.audience-grid,.step-grid{gap:14px;border:0}.audience-grid article,.step-card,.step-card:last-child{min-height:270px;padding:28px;border:1px solid rgba(255,255,255,.18)}}
