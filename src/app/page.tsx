@@ -110,15 +110,16 @@ export default function Home() {
           <p className="eyebrow">TWO WAYS TO RIDE</p><h2>Choose the level of service that matches the occasion.</h2>
         </div>
         <div className="level-grid">
-          <article className="level-card">
-            <div><p className="card-kicker">BLACK RIDE · STANDARD</p><h3>Professional transportation for every planned journey.</h3><p>Compare quotes across sedan, Standard SUV, and Full-Size SUV options from participating providers.</p></div>
+          <article className="level-card level-card-standard">
+            <Image className="level-card-image" src="/images/regia-black-sedan.webp" alt="Black executive sedan ready for a prearranged Black Ride" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <div><p className="card-kicker">BLACK RIDE · STANDARD</p><h3>Flexible choice for every planned journey.</h3><p>Compare quotes across Black Sedan, Standard SUV, Full-Size Premium SUV, and Luxury Van / Sprinter options from participating providers.</p></div>
             <ul><li><CheckIcon /> Up to three provider quotes</li><li><CheckIcon /> Flexible vehicle-class selection</li><li><CheckIcon /> Airport, business, and private trips</li></ul>
             <a href="#quote-entry">Choose Black Ride <ArrowIcon /></a>
           </article>
           <article className="level-card level-card-signature">
-            <Image className="level-card-image" src="/images/regia-signature-cabin.webp" alt="Premium black SUV passenger cabin prepared for Signature Chauffeur service" fill sizes="(max-width: 760px) 100vw, 50vw" />
-            <div><p className="card-kicker">SIGNATURE CHAUFFEUR · CURATED</p><h3>A more personalized chauffeur experience.</h3><p>Request premium service from a curated subset of qualified providers, drivers, and vehicles.</p></div>
-            <ul><li><CheckIcon /> Professional chauffeur presentation</li><li><CheckIcon /> Cadillac Escalade recommended</li><li><CheckIcon /> Personalized service requests</li></ul>
+            <Image className="level-card-image" src="/images/regia-airport-chauffeur.webp" alt="Professional chauffeur in a suit welcoming a passenger beside a black vehicle" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <div><p className="card-kicker">SIGNATURE CHAUFFEUR · CURATED</p><h3>Elevated chauffeur service, tailored around your journey.</h3><p>For VIP arrivals, executive travel, and special occasions, compare curated providers prepared for refined presentation and trip-specific requests.</p></div>
+            <ul><li><CheckIcon /> Curated professional chauffeur presentation</li><li><CheckIcon /> Full-Size Cadillac Escalade recommended</li><li><CheckIcon /> Meet-and-greet and personalized service requests</li></ul>
             <a href="#quote-entry">Choose Signature <ArrowIcon /></a>
           </article>
         </div>
