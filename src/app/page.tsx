@@ -162,7 +162,7 @@ export default function Home() {
       <section className="section vehicle-section" id="fleet">
         <div className="vehicle-heading"><p className="eyebrow">VEHICLE CATEGORIES</p><h2>Space for the people and luggage that matter.</h2><p>Capacity depends on the actual configuration quoted by the provider. Enter accurate passenger and luggage counts so providers can recommend the right category.</p></div>
         <div className="vehicle-list">
-          {vehicles.map((vehicle, index) => <article key={vehicle.title}><div className="vehicle-thumb"><Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 760px) 100vw, 50vw" /></div><div className="vehicle-card-copy"><span>0{index + 1}</span><div><h3>{vehicle.title}</h3><p>{vehicle.description}</p></div><ArrowIcon /></div></article>)}
+          {vehicles.map((vehicle) => <article key={vehicle.title}><div className="vehicle-thumb"><Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 760px) 100vw, 55vw" /></div><div className="vehicle-card-copy"><h3>{vehicle.title}</h3><p>{vehicle.description}</p></div></article>)}
         </div>
       </section>
 
