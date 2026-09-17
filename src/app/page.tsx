@@ -167,7 +167,7 @@ export default function Home() {
       </section>
 
       <section className="trust-section">
-        <div><p className="eyebrow">A CLEARER WAY TO BOOK</p><h2>One request. A considered choice.</h2></div>
+        <div><p className="eyebrow">A CLEARER WAY TO BOOK</p><h2>One request.<br />A considered choice.</h2></div>
         <div className="trust-copy"><p>Regia Rides connects customers with participating independent transportation providers. Review available quotes by vehicle, included service options, and price before selecting your ride.</p><div className="trust-points"><span><CheckIcon /> Up to three quotes</span><span><CheckIcon /> Prearranged trip details</span><span><CheckIcon /> Selected provider performs the ride</span></div></div>
       </section>
 
