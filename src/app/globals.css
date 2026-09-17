@@ -134,3 +134,14 @@ footer{padding:70px max(clamp(24px,4.5vw,72px),calc((100vw - var(--max-width))/2
   .footer-main>div:first-child>p{font-size:.94rem}.footer-links a{font-size:.86rem}
   .footer-legal p{font-size:.75rem}.footer-legal small{font-size:.72rem}
 }
+
+
+/* Final type scale: 18px body copy, 17px minimum supporting type. */
+.desktop-nav,.header-cta,.hero-copy,.text-link,.compare-link,.process-line,.button,.panel-heading>p:last-child,.choice-copy strong,.choice-copy small,.panel-note,.section-intro>p,.vehicle-heading>p:last-child,.trust-copy>p,.level-card div>p:last-child,.level-card li,.trust-points span,.level-card>a,.service-card p,.service-footer,.audience-grid p,.step-card p,.vehicle-list p,.provider-content>p:not(.eyebrow),.provider-content li,.faq-heading>p:last-child,.faq-list details p,.footer-main>div:first-child>p,.footer-links a,.footer-pending{font-size:18px}
+.eyebrow,.process-line b,.choice-topline,.card-kicker,.service-number,.audience-grid article>span,.step-card>span,.provider-photo-label span,.provider-photo-label small,.footer-links strong,.footer-legal p,.footer-legal small{font-size:17px}
+.eyebrow,.choice-topline,.card-kicker{letter-spacing:.15em}.provider-photo-label small{letter-spacing:.16em}
+.service-card{min-height:440px}.audience-grid article{min-height:310px}.vehicle-card-copy{min-height:190px}.provider-content{max-width:820px}
+.faq-section{grid-template-columns:minmax(320px,.65fr) minmax(620px,1.35fr);gap:clamp(56px,7vw,110px)}.faq-list summary{font-size:20px}.faq-list details p{max-width:820px}
+.footer-main{grid-template-columns:minmax(360px,.85fr) minmax(760px,1.55fr);gap:clamp(60px,7vw,110px)}.footer-links{gap:clamp(34px,4vw,64px)}.footer-main>div:first-child>p{max-width:480px}.footer-legal p{max-width:1120px}
+@media(max-width:1100px){.faq-section{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr}.footer-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.desktop-nav,.header-cta,.hero-copy,.text-link,.compare-link,.process-line,.button,.panel-heading>p:last-child,.choice-copy strong,.choice-copy small,.panel-note,.section-intro>p,.vehicle-heading>p:last-child,.trust-copy>p,.level-card div>p:last-child,.level-card li,.trust-points span,.level-card>a,.service-card p,.service-footer,.audience-grid p,.step-card p,.vehicle-list p,.provider-content>p:not(.eyebrow),.provider-content li,.faq-heading>p:last-child,.faq-list details p,.footer-main>div:first-child>p,.footer-links a,.footer-pending,.footer-links strong,.footer-legal p,.footer-legal small{font-size:17px}.service-card{min-height:370px}.vehicle-card-copy{min-height:170px}.footer-links{grid-template-columns:1fr}}
