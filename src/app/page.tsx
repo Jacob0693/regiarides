@@ -148,14 +148,14 @@ export default function Home() {
           <p>Regia Rides is for customers who want to compare considered transportation options before the day of travel—not rely on an on-demand match at the last moment.</p>
         </div>
         <div className="audience-grid">
-          {audiences.map(([title, description], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}
+          {audiences.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}
         </div>
       </section>
 
       <section className="section how-section" id="how-it-works">
         <div className="section-intro compact-intro"><p className="eyebrow">HOW REGIA RIDES WORKS</p><h2>Request. Compare. Select.</h2></div>
         <div className="step-grid">
-          {steps.map(([number, title, description]) => <article className="step-card" key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}
+          {steps.map(([, title, description]) => <article className="step-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}
         </div>
       </section>
 

@@ -173,3 +173,7 @@ footer{background:#111317}
 .audience-grid{gap:18px;border:0}.audience-grid article{min-height:320px;padding:36px;border:1px solid rgba(255,255,255,.18);background:#111316}
 .step-grid{gap:18px;border:0;background:transparent}.step-card,.step-card:last-child{min-height:310px;padding:36px;border:1px solid rgba(255,255,255,.18);background:#131519}
 @media(max-width:760px){.audience-grid,.step-grid{gap:14px;border:0}.audience-grid article,.step-card,.step-card:last-child{min-height:270px;padding:28px;border:1px solid rgba(255,255,255,.18)}}
+
+
+/* Number-free text cards use their space for content, not decoration. */
+.audience-grid article,.step-card{display:flex;flex-direction:column;justify-content:center}.audience-grid h3,.step-card h3{margin:0 0 18px}
