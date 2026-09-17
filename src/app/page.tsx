@@ -125,6 +125,16 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section audience-section" id="for-whom">
+        <div className="section-intro">
+          <div><p className="eyebrow">DESIGNED AROUND THE JOURNEY</p><h2>For travel that deserves more preparation.</h2></div>
+          <p>Regia Rides is for customers who want to compare considered transportation options before the day of travel—not rely on an on-demand match at the last moment.</p>
+        </div>
+        <div className="audience-grid">
+          {audiences.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}
+        </div>
+      </section>
+
       <section className="section" id="services">
         <div className="section-intro">
           <div><p className="eyebrow">TRANSPORTATION FORMATS</p><h2>Built around the way your trip moves.</h2></div>
@@ -139,16 +149,6 @@ export default function Home() {
               <div className="service-footer"><span>{service.detail}</span><ArrowIcon /></div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="section audience-section" id="for-whom">
-        <div className="section-intro">
-          <div><p className="eyebrow">DESIGNED AROUND THE JOURNEY</p><h2>For travel that deserves more preparation.</h2></div>
-          <p>Regia Rides is for customers who want to compare considered transportation options before the day of travel—not rely on an on-demand match at the last moment.</p>
-        </div>
-        <div className="audience-grid">
-          {audiences.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}
         </div>
       </section>
 

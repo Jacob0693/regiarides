@@ -177,3 +177,8 @@ footer{background:#111317}
 
 /* Number-free text cards use their space for content, not decoration. */
 .audience-grid article,.step-card{display:flex;flex-direction:column;justify-content:center}.audience-grid h3,.step-card h3{margin:0 0 18px}
+
+/* Keep the chauffeur and the SUV's rear lighting visible in the hero composition. */
+@media(min-width:1101px){
+  .quote-panel{justify-self:end;transform:translateX(clamp(0px,calc((100vw - 1200px) * .22),180px))}
+}
