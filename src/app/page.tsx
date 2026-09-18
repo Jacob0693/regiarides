@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { homeFaqs } from "./content/site-content";
 
 const serviceTypes = [
   { number: "01", title: "Airport Transfer", description: "Prearranged airport pickup or drop-off with the trip details providers need to quote accurately.", detail: "Flight-aware request details", image: "/images/regia-service-airport-transfer-v2.webp", alt: "Professional chauffeur welcoming an airport passenger beside a black sedan" },
@@ -30,19 +31,6 @@ const audiences = [
   ["Complex Itineraries", "Organize multiple independent transfers or reserve hourly service for schedules that need flexibility."],
 ] as const;
 
-const faqs = [
-  ["What is the difference between Black Ride and Signature Chauffeur?", "Black Ride lets you compare professional transportation across available vehicle classes and add a preferred make or model as a Special Request. Signature Chauffeur is a curated premium service that lets you designate a specific premium vehicle, together with elevated chauffeur and service requirements."],
-  ["How far in advance should I request a ride?", "Submit your request as early as possible so participating providers have time to review the itinerary and prepare an accurate quote. Coverage and availability vary by trip, and submitting a request does not guarantee that quotes will be available."],
-  ["What information do I need to request quotes?", "Provide the pickup and destination, date and time, passenger and luggage counts, flight details when applicable, additional stops, and any service or accessibility requests. You may choose a vehicle, request a specific model, or ask providers to recommend one."],
-  ["Can I request a specific vehicle, such as a Cadillac Escalade?", "Yes. With Black Ride, choose a vehicle class and add a preferred make or model as a Special Request; a provider can confirm and price that request in its quote. With Signature Chauffeur, you can designate a specific premium vehicle, such as a Cadillac Escalade, and the exact vehicle must be confirmed in the quote you select. If you do not choose a vehicle, select Recommend a Vehicle and a provider may include up to two suitable vehicle options based on your passenger and luggage details."],
-  ["Can I request airport meet-and-greet service?", "Yes. Add meet-and-greet, a name sign, luggage assistance, or other arrival preferences to the request. Each quote should show which requested services the provider has confirmed and included."],
-  ["What happens if my flight is delayed?", "Include the correct airline and flight number with your airport request. Participating providers can state their flight-monitoring, complimentary-waiting, and additional-waiting terms in the quote so you can review them before selecting."],
-  ["Can I add extra stops or arrange multiple rides?", "Yes. Add stops to a single continuous trip when appropriate, or choose Multiple Transfers for two or more independent rides with separate pickup locations, destinations, dates, or times."],
-  ["Can I request child seats or other special accommodations?", "Yes. Add the seat type and quantity, passenger needs, accessibility details, or other accommodations as requests. A requested item is confirmed only when it is explicitly included in the provider quote you select."],
-  ["How many quotes can I receive?", "You may receive up to three provider quotes for an eligible request. The number of quotes can vary based on coverage, trip details, service requirements, and availability."],
-  ["Does Regia Rides operate its own fleet?", "No. Regia Rides is a quote and booking platform connecting customers with participating independent transportation providers. Transportation is performed by the selected provider."],
-] as const;
-
 function ArrowIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>;
 }
@@ -57,12 +45,12 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Regia Rides home"><span>REGIA</span><small>RIDES</small></a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link>
+          <Link href="/ride-experience">Ride Experience</Link><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link>
         </nav>
         <div className="header-actions">
           <details className="mobile-menu">
             <summary aria-label="Open navigation"><span /><span /></summary>
-            <nav aria-label="Mobile navigation"><Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
+            <nav aria-label="Mobile navigation"><Link href="/ride-experience">Ride Experience</Link><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
           </details>
           <Link className="header-cta" href="/request">Get Quotes <ArrowIcon /></Link>
         </div>
@@ -214,9 +202,9 @@ export default function Home() {
       </section>
 
       <section className="faq-section" id="faq">
-        <div className="faq-heading"><p className="eyebrow">FREQUENTLY ASKED QUESTIONS</p><h2>Before you request a ride.</h2><p>Clear answers about how the Regia Rides marketplace works.</p></div>
+        <div className="faq-heading"><p className="eyebrow">FREQUENTLY ASKED QUESTIONS</p><h2>Before you request a ride.</h2><p>Essential answers about choosing an experience, planning the trip, and comparing quotes.</p><Link className="button faq-view-all" href="/faq">View All FAQs <ArrowIcon /></Link></div>
         <div className="faq-list">
-          {faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary><span>{question}</span><i aria-hidden="true" /></summary><p>{answer}</p></details>)}
+          {homeFaqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary><span>{question}</span><i aria-hidden="true" /></summary><p>{answer}</p></details>)}
         </div>
       </section>
 
