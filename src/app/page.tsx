@@ -10,9 +10,9 @@ const serviceTypes = [
 ] as const;
 
 const steps = [
-  ["01", "Request", "Tell us where and when you need transportation, plus passenger, luggage, vehicle, and service preferences."],
+  ["01", "Request", "Tell us where and when you need transportation, plus passenger, luggage, and service preferences. Choose a vehicle or ask providers to recommend one."],
   ["02", "Compare", "Review up to three quotes from participating transportation providers as they become available."],
-  ["03", "Select", "Choose the provider, vehicle, included service options, and price that fit your trip."],
+  ["03", "Select", "Choose the provider, vehicle option, included services, and price that fit your trip."],
 ] as const;
 
 const vehicles = [
@@ -32,8 +32,8 @@ const audiences = [
 const faqs = [
   ["What is the difference between Black Ride and Signature Chauffeur?", "Black Ride lets you compare professional transportation across available vehicle classes and add a preferred make or model as a Special Request. Signature Chauffeur is a curated premium service that lets you designate a specific premium vehicle, together with elevated chauffeur and service requirements."],
   ["How far in advance should I request a ride?", "Submit your request as early as possible so participating providers have time to review the itinerary and prepare an accurate quote. Coverage and availability vary by trip, and submitting a request does not guarantee that quotes will be available."],
-  ["What information do I need to request quotes?", "Provide the pickup and destination, date and time, passenger and luggage counts, flight details when applicable, vehicle preference, additional stops, and any service or accessibility requests that providers should evaluate."],
-  ["Can I request a specific vehicle, such as a Cadillac Escalade?", "Yes. With Black Ride, choose a vehicle class and add a preferred make or model as a Special Request; a provider can confirm and price that request in its quote. With Signature Chauffeur, you can designate a specific premium vehicle, such as a Cadillac Escalade, and the exact vehicle must be confirmed in the quote you select."],
+  ["What information do I need to request quotes?", "Provide the pickup and destination, date and time, passenger and luggage counts, flight details when applicable, additional stops, and any service or accessibility requests. You may choose a vehicle, request a specific model, or ask providers to recommend one."],
+  ["Can I request a specific vehicle, such as a Cadillac Escalade?", "Yes. With Black Ride, choose a vehicle class and add a preferred make or model as a Special Request; a provider can confirm and price that request in its quote. With Signature Chauffeur, you can designate a specific premium vehicle, such as a Cadillac Escalade, and the exact vehicle must be confirmed in the quote you select. If you do not choose a vehicle, select Recommend a Vehicle and a provider may include up to two suitable vehicle options based on your passenger and luggage details."],
   ["Can I request airport meet-and-greet service?", "Yes. Add meet-and-greet, a name sign, luggage assistance, or other arrival preferences to the request. Each quote should show which requested services the provider has confirmed and included."],
   ["What happens if my flight is delayed?", "Include the correct airline and flight number with your airport request. Participating providers can state their flight-monitoring, complimentary-waiting, and additional-waiting terms in the quote so you can review them before selecting."],
   ["Can I add extra stops or arrange multiple rides?", "Yes. Add stops to a single continuous trip when appropriate, or choose Multiple Transfers for two or more independent rides with separate pickup locations, destinations, dates, or times."],
@@ -117,8 +117,8 @@ export default function Home() {
         <div className="level-grid">
           <article className="level-card level-card-standard">
             <Image className="level-card-image" src="/images/regia-black-sedan.webp" alt="Black executive sedan ready for a prearranged Black Ride" fill sizes="(max-width: 760px) 100vw, 50vw" />
-            <div><p className="card-kicker">BLACK RIDE · STANDARD</p><h3>Flexible choice for every planned journey.</h3><p>Compare quotes across vehicle classes from participating providers, and add a preferred make or model as a Special Request.</p></div>
-            <ul><li><CheckIcon /> Up to three provider quotes</li><li><CheckIcon /> Vehicle-class selection with model requests</li><li><CheckIcon /> Airport, business, and private trips</li></ul>
+            <div><p className="card-kicker">BLACK RIDE · STANDARD</p><h3>Flexible choice for every planned journey.</h3><p>Choose a vehicle class, add a preferred model as a Special Request, or ask providers to recommend a suitable vehicle from your passenger and luggage details.</p></div>
+            <ul><li><CheckIcon /> Up to three provider quotes</li><li><CheckIcon /> Choose a class, request a model, or get recommendations</li><li><CheckIcon /> Airport, business, and private trips</li></ul>
             <a href="#quote-entry">Choose Black Ride <ArrowIcon /></a>
           </article>
           <article className="level-card level-card-signature">
@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       <section className="section vehicle-section" id="fleet">
-        <div className="vehicle-heading"><p className="eyebrow">VEHICLE CATEGORIES</p><h2>Space for the people and luggage that matter.</h2><p>Capacity depends on the actual configuration quoted by the provider. Enter accurate passenger and luggage counts so providers can recommend the right category.</p></div>
+        <div className="vehicle-heading"><p className="eyebrow">VEHICLE CATEGORIES</p><h2>Space for the people and luggage that matter.</h2><p>Choose a vehicle category or select Recommend a Vehicle. When you ask for a recommendation, providers can use your passenger and luggage details to include up to two suitable vehicle options in a quote.</p></div>
         <div className="vehicle-list">
           {vehicles.map((vehicle) => <article key={vehicle.title}><div className="vehicle-thumb"><Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 760px) 100vw, 55vw" /></div><div className="vehicle-card-copy"><h3>{vehicle.title}</h3><p>{vehicle.description}</p></div></article>)}
         </div>
