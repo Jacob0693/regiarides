@@ -186,3 +186,94 @@ footer{background:#111317}
 /* Vehicle cards size to their content with balanced top and bottom spacing. */
 .vehicle-card-copy{min-height:0;padding:28px 32px}
 @media(max-width:760px){.vehicle-card-copy{min-height:0;padding:24px}}
+
+
+/* Refined luxury framing: crisp card outlines, gold actions, and pointer hover states. */
+:root{--frame-line:rgba(255,255,255,.25);--frame-line-soft:rgba(255,255,255,.18);--action-line:rgba(201,185,147,.82)}
+
+.audience-grid article,
+.step-card,
+.vehicle-list article,
+.level-card,
+.service-card,
+.quote-panel,
+.service-choice{
+  border-color:var(--frame-line);
+  border-radius:0;
+}
+
+.audience-grid article,
+.step-card{
+  background:#121316;
+}
+
+.audience-grid article,
+.step-card,
+.vehicle-list article,
+.level-card,
+.service-card{
+  transition:border-color 220ms ease,background-color 220ms ease,box-shadow 220ms ease;
+}
+
+@media(hover:hover) and (pointer:fine){
+  .audience-grid article:hover,
+  .step-card:hover,
+  .vehicle-list article:hover,
+  .level-card:hover,
+  .service-card:hover{
+    border-color:var(--action-line);
+    background-color:#17181b;
+    box-shadow:0 0 0 1px rgba(201,185,147,.08) inset;
+  }
+
+  .audience-grid article:hover h3,
+  .step-card:hover h3,
+  .vehicle-list article:hover h3,
+  .level-card:hover h3,
+  .service-card:hover h3{
+    color:#fff;
+  }
+
+  .service-choice:hover{
+    border-color:var(--action-line);
+    background:#171717;
+  }
+}
+
+.button,
+.header-cta{
+  border:1px solid var(--action-line);
+  border-radius:0;
+  background:rgba(8,8,8,.3);
+  color:var(--accent);
+  font-weight:650;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease;
+}
+
+.button-primary,
+.button-secondary{
+  border-color:var(--action-line);
+  background:rgba(8,8,8,.3);
+  color:var(--accent);
+}
+
+@media(hover:hover) and (pointer:fine){
+  .button:hover,
+  .button-primary:hover,
+  .button-secondary:hover,
+  .header-cta:hover{
+    border-color:var(--accent);
+    background:var(--accent);
+    color:#090909;
+  }
+}
+
+.button-pending:disabled{
+  border-color:rgba(201,185,147,.28);
+  background:transparent;
+  color:#777;
+  letter-spacing:.04em;
+  text-transform:none;
+}
