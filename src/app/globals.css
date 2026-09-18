@@ -182,3 +182,7 @@ footer{background:#111317}
 @media(min-width:1101px){
   .quote-panel{justify-self:end;transform:translateX(clamp(0px,calc((100vw - 1200px) * .22),180px))}
 }
+
+/* Vehicle cards size to their content with balanced top and bottom spacing. */
+.vehicle-card-copy{min-height:0;padding:28px 32px}
+@media(max-width:760px){.vehicle-card-copy{min-height:0;padding:24px}}
