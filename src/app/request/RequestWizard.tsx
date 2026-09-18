@@ -2,36 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import Link from "next/link";
-
-type Segment = { pickup: string; destination: string; date: string; time: string };
-
-type RequestData = {
-  experience: string;
-  tripType: string;
-  direction: string;
-  pickup: string;
-  destination: string;
-  date: string;
-  time: string;
-  passengers: string;
-  carryOn: string;
-  checkedBags: string;
-  airport: string;
-  airline: string;
-  flightNumber: string;
-  duration: string;
-  itineraryNotes: string;
-  vehicle: string;
-  specificModel: string;
-  preferences: string[];
-  preferredLanguage: string;
-  specialRequests: string;
-  name: string;
-  email: string;
-  phone: string;
-  contactMethod: string;
-  consent: boolean;
-};
+import type { RequestData, RequestSegment as Segment } from "./request-types";
 
 const steps = ["Ride Experience", "Trip Type", "Trip Details", "Vehicle", "Preferences", "Contact & Review"];
 
@@ -112,7 +83,7 @@ function labelFor<T extends readonly (readonly string[])[]>(items: T, value: str
   return items.find((item) => item[0] === value)?.[1] ?? "Not selected";
 }
 
-export function RequestWizard({ initialExperience, initialTrip }: { initialExperience?: string; initialTrip?: string }) {
+export function RequestWizard({ initialExperience, initialTrip, submissionEnabled }: { initialExperience?: string; initialTrip?: string; submissionEnabled: boolean }) {
   const validExperience = experiences.some((item) => item.value === initialExperience) ? initialExperience! : "";
   const validTrip = tripTypes.some((item) => item[0] === initialTrip) ? initialTrip! : "";
   const [currentStep, setCurrentStep] = useState(validExperience && validTrip ? 2 : validExperience ? 1 : 0);
@@ -122,6 +93,10 @@ export function RequestWizard({ initialExperience, initialTrip }: { initialExper
     { pickup: "", destination: "", date: "", time: "" },
   ]);
   const [previewComplete, setPreviewComplete] = useState(false);
+  const [reference, setReference] = useState("");
+  const [submissionError, setSubmissionError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [companyWebsite, setCompanyWebsite] = useState("");
 
   const selectedExperience = experiences.find((item) => item.value === data.experience)?.title ?? "Not selected";
   const selectedTrip = labelFor(tripTypes, data.tripType);
@@ -152,26 +127,49 @@ export function RequestWizard({ initialExperience, initialTrip }: { initialExper
     }));
   }
 
-  function goNext(event: FormEvent<HTMLFormElement>) {
+  async function goNext(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (currentStep < steps.length - 1) {
       setCurrentStep((step) => step + 1);
+      setSubmissionError("");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    setPreviewComplete(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (!submissionEnabled) {
+      setPreviewComplete(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmissionError("");
+    try {
+      const response = await fetch("/api/requests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data, segments, companyWebsite }),
+      });
+      const result = await response.json() as { reference?: string; error?: string };
+      if (!response.ok || !result.reference) throw new Error(result.error || "We could not submit the request. Please try again.");
+      setReference(result.reference);
+      setPreviewComplete(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (error) {
+      setSubmissionError(error instanceof Error ? error.message : "We could not submit the request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (previewComplete) {
     return (
       <section className="request-complete" aria-live="polite">
-        <p className="eyebrow">REQUEST PREVIEW COMPLETE</p>
-        <h2>Your request is organized and ready for secure submission.</h2>
-        <p>
-          This staging page does not yet send personal or trip information to providers.
-          Secure storage, email verification, and quote routing will be connected before public launch.
-        </p>
+        <p className="eyebrow">{reference ? "REQUEST RECEIVED" : "REQUEST PREVIEW COMPLETE"}</p>
+        <h2>{reference ? "Your request has been received." : "Your request is organized and ready for secure submission."}</h2>
+        {reference
+          ? <p>Keep reference <strong>{reference}</strong> for your records. This is a request for quotes, not a confirmed booking. A confirmation has been sent to the email address you provided.</p>
+          : <p>This staging environment is not connected to an intake mailbox, so no personal or trip information was sent. Add the secure SMTP settings before public launch.</p>}
         <div className="request-complete-summary">
           <span><small>Ride experience</small>{selectedExperience}</span>
           <span><small>Trip type</small>{selectedTrip}</span>
@@ -205,6 +203,7 @@ export function RequestWizard({ initialExperience, initialTrip }: { initialExper
       </aside>
 
       <form className="request-form" onSubmit={goNext}>
+        <div className="request-honeypot" aria-hidden="true"><label htmlFor="company-website">Company website</label><input id="company-website" name="companyWebsite" tabIndex={-1} autoComplete="off" value={companyWebsite} onChange={(event) => setCompanyWebsite(event.target.value)} /></div>
         <header className="request-step-heading">
           <span>STEP {String(currentStep + 1).padStart(2, "0")} OF {String(steps.length).padStart(2, "0")}</span>
           <h2>{steps[currentStep]}</h2>
@@ -306,9 +305,12 @@ export function RequestWizard({ initialExperience, initialTrip }: { initialExper
 
         <footer className="request-form-actions">
           {currentStep > 0 ? <button className="button request-back" type="button" onClick={() => setCurrentStep((step) => step - 1)}>Back</button> : <span />}
-          <button className="button button-primary" type="submit">
-            {currentStep === steps.length - 1 ? "Preview Completed Request" : `Continue to ${steps[currentStep + 1]}`} <ArrowIcon />
-          </button>
+          <div className="request-submit-area">
+            {submissionError && <p className="request-submit-error" role="alert">{submissionError}</p>}
+            <button className="button button-primary" type="submit" disabled={isSubmitting}>
+              {currentStep === steps.length - 1 ? (isSubmitting ? "Submitting…" : submissionEnabled ? "Submit Request" : "Preview Completed Request") : `Continue to ${steps[currentStep + 1]}`} <ArrowIcon />
+            </button>
+          </div>
         </footer>
       </form>
     </section>

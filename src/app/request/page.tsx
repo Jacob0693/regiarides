@@ -14,6 +14,7 @@ type RequestPageProps = {
 
 export default async function RequestPage({ searchParams }: RequestPageProps) {
   const params = await searchParams;
+  const submissionEnabled = Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASSWORD && process.env.REQUEST_NOTIFICATION_EMAIL && process.env.REQUEST_FROM_EMAIL);
 
   return (
     <main className="request-page">
@@ -26,7 +27,7 @@ export default async function RequestPage({ searchParams }: RequestPageProps) {
           comparable transportation options.
         </p>
       </section>
-      <RequestWizard initialExperience={params.experience} initialTrip={params.trip} />
+      <RequestWizard initialExperience={params.experience} initialTrip={params.trip} submissionEnabled={submissionEnabled} />
       <SiteFooter />
     </main>
   );
