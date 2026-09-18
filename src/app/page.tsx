@@ -167,8 +167,30 @@ export default function Home() {
       </section>
 
       <section className="trust-section">
-        <div><p className="eyebrow">A CLEARER WAY TO BOOK</p><h2>One request.<br />A considered choice.</h2></div>
-        <div className="trust-copy"><p>Regia Rides connects customers with participating independent transportation providers. Review available quotes by vehicle, included service options, and price before selecting your ride.</p><div className="trust-points"><span><CheckIcon /> Up to three quotes</span><span><CheckIcon /> Prearranged trip details</span><span><CheckIcon /> Selected provider performs the ride</span></div></div>
+        <div><p className="eyebrow">WHY REGIA RIDES</p><h2>Compare with more clarity before you book.</h2></div>
+        <div className="trust-copy">
+          <p>One detailed request helps participating providers prepare quotes around your itinerary. Review the vehicle category, included services, and price before selecting the option that fits your trip.</p>
+          <div className="trust-points">
+            <span><CheckIcon /> Up to three provider quotes to review</span>
+            <span><CheckIcon /> Vehicle category and included services shown clearly</span>
+            <span><CheckIcon /> Meet-and-greet, child seats, additional stops, and other requests</span>
+            <span><CheckIcon /> Airport, business, VIP, and multi-transfer planning</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="section service-area-section" id="service-area">
+        <div className="service-area-copy">
+          <p className="eyebrow">SOUTHERN CALIFORNIA SERVICE AREA</p>
+          <h2>Planned transportation across Los Angeles and Orange County.</h2>
+          <p>Share complete pickup, destination, date, and schedule details when requesting a quote. Provider coverage and availability vary by trip.</p>
+        </div>
+        <div className="service-area-grid">
+          <article className="area-card"><h3>LAX &amp; Regional Airports</h3><p>Prearranged airport pickups and drop-offs with the flight and timing details providers need.</p></article>
+          <article className="area-card"><h3>Los Angeles</h3><p>Transportation requests for hotels, offices, meetings, venues, private addresses, and special occasions.</p></article>
+          <article className="area-card"><h3>Orange County</h3><p>Planned rides serving Irvine, Anaheim, coastal communities, business districts, and surrounding areas.</p></article>
+          <article className="area-card"><h3>Regional Travel</h3><p>Intercity and long-distance requests to select Southern California destinations, subject to provider coverage.</p></article>
+        </div>
       </section>
 
       <section className="provider-section" id="providers">
