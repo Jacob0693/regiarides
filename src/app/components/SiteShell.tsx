@@ -15,12 +15,12 @@ export function SiteHeader() {
     <header className="site-header interior-site-header">
       <Link className="brand" href="/" aria-label="Regia Rides home"><span>REGIA</span><small>RIDES</small></Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
-        <Link href="/services">Services</Link><Link href="/service-levels">Service Levels</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link>
+        <Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link>
       </nav>
       <div className="header-actions">
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span /><span /></summary>
-          <nav aria-label="Mobile navigation"><Link href="/services">Services</Link><Link href="/service-levels">Service Levels</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link><Link href="/faq">FAQ</Link></nav>
+          <nav aria-label="Mobile navigation"><Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link><Link href="/faq">FAQ</Link></nav>
         </details>
         <Link className="header-cta" href="/#quote-entry">Get Quotes <ArrowIcon /></Link>
       </div>
@@ -34,8 +34,8 @@ export function SiteFooter() {
       <div className="footer-main">
         <div><Link className="brand footer-brand" href="/"><span>REGIA</span><small>RIDES</small></Link><p>Premium private transportation, compared in one place.</p></div>
         <div className="footer-links">
-          <div><strong>Explore</strong><Link href="/services">Services</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link></div>
-          <div><strong>Company</strong><Link href="/providers">For Providers</Link><Link href="/service-levels">Service Levels</Link><Link href="/faq">FAQ &amp; Help</Link></div>
+          <div><strong>Explore</strong><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link></div>
+          <div><strong>Company</strong><Link href="/providers">For Providers</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/faq">FAQ &amp; Help</Link></div>
           <div><strong>Legal</strong><span className="footer-pending">Terms — publishing later</span><span className="footer-pending">Privacy — publishing later</span></div>
         </div>
       </div>
