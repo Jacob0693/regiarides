@@ -189,7 +189,7 @@ footer{background:#111317}
 
 
 /* Refined luxury framing: crisp card outlines, gold actions, and pointer hover states. */
-:root{--frame-line:rgba(255,255,255,.25);--frame-line-soft:rgba(255,255,255,.18);--action-line:rgba(211,172,82,.82)}
+:root{--frame-line:rgba(255,255,255,.38);--frame-line-soft:rgba(255,255,255,.26);--action-line:rgba(211,172,82,.82)}
 
 .audience-grid article,
 .step-card,
