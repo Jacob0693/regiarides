@@ -35,7 +35,7 @@ export function SiteFooter() {
         <div><Link className="brand footer-brand" href="/"><span>REGIA</span><small>RIDES</small></Link><p>Premium private transportation, compared in one place.</p></div>
         <div className="footer-links">
           <div><strong>Explore</strong><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link></div>
-          <div><strong>Company</strong><Link href="/providers">For Providers</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/faq">FAQ &amp; Help</Link></div>
+          <div><strong>Company</strong><Link href="/about">About Regia Rides</Link><Link href="/providers">For Providers</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/faq">FAQ &amp; Help</Link></div>
           <div><strong>Legal</strong><span className="footer-pending">Terms — publishing later</span><span className="footer-pending">Privacy — publishing later</span></div>
         </div>
       </div>

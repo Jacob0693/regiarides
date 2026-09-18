@@ -383,3 +383,27 @@ footer{background:#111317}
 @media(hover:hover) and (pointer:fine){.request-option-card:hover{border-color:var(--action-line);background:#17181b}}
 @media(max-width:1100px){.request-shell{grid-template-columns:260px minmax(0,1fr)}.request-form{padding-left:38px}.request-progress{padding-right:28px}.contact-review-layout{grid-template-columns:1fr}.request-review-card{order:-1}.trip-options,.vehicle-options{grid-template-columns:1fr}}
 @media(max-width:760px){.request-hero{padding:135px 20px 58px}.request-hero h1{font-size:clamp(3.5rem,14vw,5rem)}.request-hero>p:last-child{font-size:17px}.request-shell{display:block;padding:0 20px 80px}.request-progress{position:static;padding:32px 0 0}.request-progress>.eyebrow,.request-progress-note{display:none}.request-progress ol{display:flex;overflow-x:auto;margin:0;padding:0 0 18px;border-bottom:1px solid var(--line);scrollbar-width:none}.request-progress li{min-width:max-content;padding:0 20px 0 0;border:0}.request-progress li:before{display:none}.request-progress button{font-size:15px}.request-form{padding:50px 0 0;border-left:0}.request-step-heading{margin-bottom:34px}.request-step-heading h2{font-size:3.25rem}.request-step-heading p{font-size:17px}.request-option-grid.two-columns,.trip-options,.vehicle-options,.request-fields,.request-check-grid{grid-template-columns:1fr}.request-option-card{min-height:160px;padding:26px 24px 24px 56px}.request-option-indicator{top:28px;left:24px}.request-option-copy strong{font-size:1.8rem}.request-option-copy>span{font-size:17px}.request-field-wide{grid-column:auto}.specific-model-field{padding:22px}.transfer-segment{padding:24px 20px}.transfer-segment .request-fields{grid-template-columns:1fr}.segment-remove{position:static;margin-top:20px}.contact-review-layout{gap:26px}.request-form-actions{align-items:stretch;flex-direction:column-reverse}.request-form-actions>span{display:none}.request-form-actions .button{width:100%}.request-complete{width:calc(100% - 40px);padding:80px 0 100px}.request-complete h2{font-size:3.4rem}.request-complete-summary{grid-template-columns:1fr}}
+
+/* About page: an editorial brand story with concrete customer commitments. */
+.about-story-section{display:grid;grid-template-columns:minmax(420px,.92fr) minmax(0,1.08fr);align-items:center;gap:clamp(58px,7vw,105px)}
+.about-story-image{position:relative;min-height:620px;overflow:hidden;border:1px solid var(--frame-line);background:#111316}
+.about-story-image img{object-fit:cover;object-position:center}
+.about-story-copy h2,.about-experience-section h2,.about-marketplace-section h2{margin:0;font-size:clamp(2.9rem,4vw,4.5rem);font-weight:500;letter-spacing:-.025em;line-height:.98}
+.about-story-copy>p:not(.eyebrow){margin:25px 0 0;color:#b8b8b4;font-size:18px;line-height:1.75}
+.about-name-section{padding-top:92px;padding-bottom:92px}
+.about-name-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(500px,1.18fr);align-items:start;gap:clamp(60px,8vw,120px)}
+.about-name-layout h2{max-width:640px;margin:0;font-size:clamp(2.9rem,4vw,4.5rem);font-weight:500;letter-spacing:-.025em;line-height:.98}
+.about-name-layout p{margin:0 0 22px;color:#b8b8b4;font-size:18px;line-height:1.75}.about-name-layout p:last-child{margin-bottom:0}.about-name-layout strong{color:#f1f0ec;font-weight:600}
+.about-process-grid article{transition:border-color 220ms ease,background-color 220ms ease,box-shadow 220ms ease}
+.about-experience-section,.about-marketplace-section{display:grid;grid-template-columns:minmax(0,.84fr) minmax(500px,1.16fr);align-items:start;gap:clamp(60px,8vw,120px)}
+.about-experience-copy>p,.about-marketplace-section>div:last-child>p{margin:0 0 25px;color:#b8b8b4;font-size:18px;line-height:1.75}
+.about-experience-copy strong{color:#f1f0ec;font-weight:600}
+.about-experience-copy .button{margin-top:12px}
+.about-commitment-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.about-commitment-grid article{display:flex;min-height:310px;flex-direction:column;justify-content:flex-end;padding:34px;border:1px solid var(--frame-line);background:#121316;transition:border-color 220ms ease,background-color 220ms ease,box-shadow 220ms ease}
+.about-commitment-grid h3{margin:0 0 17px;font-size:1.85rem;font-weight:500;line-height:1}
+.about-commitment-grid p{margin:0;color:#aaa9a5;font-size:18px;line-height:1.65}
+.about-marketplace-section .check-list{margin-top:34px}
+@media(hover:hover) and (pointer:fine){.about-process-grid article:hover,.about-commitment-grid article:hover{border-color:var(--action-line);background-color:#17181b;box-shadow:0 0 0 1px rgba(211,172,82,.08) inset}.about-commitment-grid article:hover h3{color:#fff}}
+@media(max-width:1100px){.about-story-section,.about-name-layout,.about-experience-section,.about-marketplace-section{grid-template-columns:1fr;gap:45px}.about-story-image{min-height:500px}.about-commitment-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.about-story-image{min-height:360px}.about-name-section{padding-top:75px;padding-bottom:75px}.about-story-copy>p:not(.eyebrow),.about-name-layout p,.about-experience-copy>p,.about-marketplace-section>div:last-child>p,.about-commitment-grid p{font-size:17px}.about-commitment-grid{grid-template-columns:1fr;gap:14px}.about-commitment-grid article{min-height:250px;padding:28px}.about-experience-copy .button{width:100%}}
