@@ -30,11 +30,16 @@ const audiences = [
 ] as const;
 
 const faqs = [
+  ["What is the difference between Black Ride and Signature Chauffeur?", "Black Ride lets you compare professional transportation across available vehicle classes and add a preferred make or model as a Special Request. Signature Chauffeur is a curated premium service that lets you designate a specific premium vehicle, together with elevated chauffeur and service requirements."],
+  ["How far in advance should I request a ride?", "Submit your request as early as possible so participating providers have time to review the itinerary and prepare an accurate quote. Coverage and availability vary by trip, and submitting a request does not guarantee that quotes will be available."],
+  ["What information do I need to request quotes?", "Provide the pickup and destination, date and time, passenger and luggage counts, flight details when applicable, vehicle preference, additional stops, and any service or accessibility requests that providers should evaluate."],
+  ["Can I request a specific vehicle, such as a Cadillac Escalade?", "Yes. With Black Ride, choose a vehicle class and add a preferred make or model as a Special Request; a provider can confirm and price that request in its quote. With Signature Chauffeur, you can designate a specific premium vehicle, such as a Cadillac Escalade, and the exact vehicle must be confirmed in the quote you select."],
+  ["Can I request airport meet-and-greet service?", "Yes. Add meet-and-greet, a name sign, luggage assistance, or other arrival preferences to the request. Each quote should show which requested services the provider has confirmed and included."],
+  ["What happens if my flight is delayed?", "Include the correct airline and flight number with your airport request. Participating providers can state their flight-monitoring, complimentary-waiting, and additional-waiting terms in the quote so you can review them before selecting."],
+  ["Can I add extra stops or arrange multiple rides?", "Yes. Add stops to a single continuous trip when appropriate, or choose Multiple Transfers for two or more independent rides with separate pickup locations, destinations, dates, or times."],
+  ["Can I request child seats or other special accommodations?", "Yes. Add the seat type and quantity, passenger needs, accessibility details, or other accommodations as requests. A requested item is confirmed only when it is explicitly included in the provider quote you select."],
+  ["How many quotes can I receive?", "You may receive up to three provider quotes for an eligible request. The number of quotes can vary based on coverage, trip details, service requirements, and availability."],
   ["Does Regia Rides operate its own fleet?", "No. Regia Rides is a quote and booking platform connecting customers with participating independent transportation providers. Transportation is performed by the selected provider."],
-  ["How many quotes can I receive?", "You may receive up to three provider quotes for an eligible request. The number of quotes can vary based on coverage, trip details, and availability."],
-  ["What is the difference between Black Ride and Signature Chauffeur?", "Black Ride offers professional transportation across standard vehicle classes. Signature Chauffeur is a curated premium service level with qualified providers, drivers, vehicles, and enhanced service standards."],
-  ["Can I arrange several rides in one request?", "Yes. Choose Multiple Transfers when you have two or more independent rides with separate pickup locations, destinations, dates, or times."],
-  ["Can I request an airport pickup or drop-off?", "Yes. Airport requests collect the relevant flight and schedule details so participating providers can prepare an accurate quote."],
 ] as const;
 
 function ArrowIcon() {
@@ -112,14 +117,14 @@ export default function Home() {
         <div className="level-grid">
           <article className="level-card level-card-standard">
             <Image className="level-card-image" src="/images/regia-black-sedan.webp" alt="Black executive sedan ready for a prearranged Black Ride" fill sizes="(max-width: 760px) 100vw, 50vw" />
-            <div><p className="card-kicker">BLACK RIDE · STANDARD</p><h3>Flexible choice for every planned journey.</h3><p>Compare quotes across Black Sedan, Standard SUV, Full-Size Premium SUV, and Luxury Van / Sprinter options from participating providers.</p></div>
-            <ul><li><CheckIcon /> Up to three provider quotes</li><li><CheckIcon /> Flexible vehicle-class selection</li><li><CheckIcon /> Airport, business, and private trips</li></ul>
+            <div><p className="card-kicker">BLACK RIDE · STANDARD</p><h3>Flexible choice for every planned journey.</h3><p>Compare quotes across vehicle classes from participating providers, and add a preferred make or model as a Special Request.</p></div>
+            <ul><li><CheckIcon /> Up to three provider quotes</li><li><CheckIcon /> Vehicle-class selection with model requests</li><li><CheckIcon /> Airport, business, and private trips</li></ul>
             <a href="#quote-entry">Choose Black Ride <ArrowIcon /></a>
           </article>
           <article className="level-card level-card-signature">
             <Image className="level-card-image" src="/images/regia-airport-chauffeur.webp" alt="Professional chauffeur in a suit welcoming a passenger beside a black vehicle" fill sizes="(max-width: 760px) 100vw, 50vw" />
             <div><p className="card-kicker">SIGNATURE CHAUFFEUR · CURATED</p><h3>Elevated chauffeur service, tailored around your journey.</h3><p>For VIP arrivals, executive travel, and special occasions, compare curated providers prepared for refined presentation and trip-specific requests.</p></div>
-            <ul><li><CheckIcon /> Curated professional chauffeur presentation</li><li><CheckIcon /> Full-Size Cadillac Escalade recommended</li><li><CheckIcon /> Meet-and-greet and personalized service requests</li></ul>
+            <ul><li><CheckIcon /> Curated professional chauffeur presentation</li><li><CheckIcon /> Specific premium vehicle selection, including Cadillac Escalade</li><li><CheckIcon /> Meet-and-greet and personalized service requests</li></ul>
             <a href="#quote-entry">Choose Signature <ArrowIcon /></a>
           </article>
         </div>
