@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import Link from "next/link";
 
 type Segment = { pickup: string; destination: string; date: string; time: string };
 
@@ -286,7 +287,7 @@ export function RequestWizard({ initialExperience, initialTrip }: { initialExper
               <div className="request-field"><label htmlFor="email">Email</label><input required id="email" type="email" autoComplete="email" value={data.email} onChange={(event) => update("email", event.target.value)} /></div>
               <div className="request-field"><label htmlFor="phone">Phone</label><input required id="phone" type="tel" autoComplete="tel" value={data.phone} onChange={(event) => update("phone", event.target.value)} /></div>
               <div className="request-field"><label htmlFor="contact-method">Preferred contact</label><select id="contact-method" value={data.contactMethod} onChange={(event) => update("contactMethod", event.target.value)}><option>Email</option><option>Phone</option><option>Text message</option></select></div>
-              <label className="request-consent request-field-wide"><input required type="checkbox" checked={data.consent} onChange={(event) => update("consent", event.target.checked)} /><span>I confirm that the itinerary and passenger details are accurate and understand that submitting a request does not guarantee quote availability.</span></label>
+              <label className="request-consent request-field-wide"><input required type="checkbox" checked={data.consent} onChange={(event) => update("consent", event.target.checked)} /><span>I confirm that the itinerary and passenger details are accurate, agree to the <Link href="/terms">Terms of Use</Link>, acknowledge the <Link href="/privacy">Privacy Policy</Link> and <Link href="/cancellation">Cancellation &amp; Changes Policy</Link>, and understand that submitting a request does not guarantee quote availability.</span></label>
             </div>
             <aside className="request-review-card">
               <h3>Request summary</h3>

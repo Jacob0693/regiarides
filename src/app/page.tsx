@@ -219,7 +219,7 @@ export default function Home() {
           <div className="footer-links">
             <div><strong>Explore</strong><Link href="/ride-experience">Ride Experience</Link><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link></div>
             <div><strong>Company</strong><Link href="/about">About Regia Rides</Link><Link href="/providers">For Providers</Link><Link href="/faq">FAQ &amp; Help</Link></div>
-            <div><strong>Legal</strong><span className="footer-pending">Terms — publishing later</span><span className="footer-pending">Privacy — publishing later</span></div>
+            <div><strong>Legal</strong><Link href="/terms">Terms of Use</Link><Link href="/privacy">Privacy Policy</Link><Link href="/cancellation">Cancellation &amp; Changes</Link><Link href="/accessibility">Accessibility</Link><Link href="/cookies">Cookie Policy</Link></div>
           </div>
         </div>
         <div className="footer-legal"><p>Regia Rides is a quote and booking platform connecting customers with participating independent transportation providers. Transportation is performed by the selected provider, not by Regia Rides.</p><small>© {new Date().getFullYear()} Regia Mobility Group LLC</small></div>
