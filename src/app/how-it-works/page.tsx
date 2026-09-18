@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
     <InteriorLayout>
       <InteriorHero
         eyebrow="HOW REGIA RIDES WORKS"
-        title="One request. A considered choice."
+        title={"One request.\nA considered choice."}
         copy="Prepare the trip once, receive clear offers from participating transportation providers, and compare what is actually included before selecting."
         image="/images/regia-final-cta.webp"
       >
