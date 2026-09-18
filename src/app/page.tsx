@@ -56,12 +56,12 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Regia Rides home"><span>REGIA</span><small>RIDES</small></a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#services">Services</a><a href="#for-whom">Who We Serve</a><a href="#how-it-works">How It Works</a><a href="#fleet">Vehicles</a><a href="#providers">For Providers</a>
+          <a href="/services">Services</a><a href="/service-levels">Service Levels</a><a href="/how-it-works">How It Works</a><a href="/vehicles">Vehicles</a><a href="/providers">For Providers</a>
         </nav>
         <div className="header-actions">
           <details className="mobile-menu">
             <summary aria-label="Open navigation"><span /><span /></summary>
-            <nav aria-label="Mobile navigation"><a href="#services">Services</a><a href="#for-whom">Who We Serve</a><a href="#how-it-works">How It Works</a><a href="#fleet">Vehicles</a><a href="#providers">For Providers</a><a href="#faq">FAQ</a></nav>
+            <nav aria-label="Mobile navigation"><a href="/services">Services</a><a href="/service-levels">Service Levels</a><a href="/how-it-works">How It Works</a><a href="/vehicles">Vehicles</a><a href="/providers">For Providers</a><a href="/faq">FAQ</a></nav>
           </details>
           <a className="header-cta" href="#quote-entry">Get Quotes <ArrowIcon /></a>
         </div>
@@ -228,8 +228,8 @@ export default function Home() {
         <div className="footer-main">
           <div><a className="brand footer-brand" href="#top"><span>REGIA</span><small>RIDES</small></a><p>Premium private transportation, compared in one place.</p></div>
           <div className="footer-links">
-            <div><strong>Explore</strong><a href="#services">Services</a><a href="#how-it-works">How It Works</a><a href="#fleet">Vehicles</a></div>
-            <div><strong>Company</strong><a href="#providers">For Providers</a><a href="#for-whom">Who We Serve</a><a href="#faq">Contact &amp; Help</a></div>
+            <div><strong>Explore</strong><a href="/services">Services</a><a href="/how-it-works">How It Works</a><a href="/vehicles">Vehicles</a></div>
+            <div><strong>Company</strong><a href="/providers">For Providers</a><a href="/service-levels">Service Levels</a><a href="/faq">FAQ &amp; Help</a></div>
             <div><strong>Legal</strong><span className="footer-pending">Terms — publishing later</span><span className="footer-pending">Privacy — publishing later</span></div>
           </div>
         </div>

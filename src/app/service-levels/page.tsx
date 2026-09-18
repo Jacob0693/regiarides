@@ -1,0 +1,15 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { CheckIcon, FinalCta, InteriorHero, InteriorLayout } from "../components/SiteShell";
+
+export const metadata: Metadata = { title: "Black Ride and Signature Chauffeur", description: "Compare Regia Rides service levels and choose the transportation experience that matches your journey.", alternates: { canonical: "/service-levels" } };
+
+export default function ServiceLevelsPage(){return <InteriorLayout>
+  <InteriorHero eyebrow="TWO WAYS TO RIDE" title="Choose the level of service that matches the occasion." copy="Both service levels use the same clear request and quote-comparison process. The difference is the provider qualification, vehicle choice, and service standard." image="/images/regia-airport-chauffeur.webp" />
+  <section className="interior-section service-level-page-grid">
+    <article><div className="level-page-image"><Image src="/images/regia-black-sedan.webp" alt="Black executive sedan" fill sizes="(max-width:760px) 100vw, 50vw" /></div><p className="eyebrow">BLACK RIDE · STANDARD</p><h2>Flexible professional transportation.</h2><p>Compare participating providers across practical and premium vehicle categories for airport, business, private, and regional trips.</p><ul><li><CheckIcon /> Choose a vehicle class</li><li><CheckIcon /> Add a preferred model as a Special Request</li><li><CheckIcon /> Or request up to two recommended vehicle options per provider</li><li><CheckIcon /> Compare up to three provider quotes as available</li></ul></article>
+    <article><div className="level-page-image"><Image src="/images/regia-airport-chauffeur.webp" alt="Professional chauffeur beside a premium vehicle" fill sizes="(max-width:760px) 100vw, 50vw" /></div><p className="eyebrow">SIGNATURE CHAUFFEUR · CURATED</p><h2>Elevated service with specific choices.</h2><p>Designed for VIP arrivals, executive travel, and special occasions requiring qualified providers and more detailed service confirmation.</p><ul><li><CheckIcon /> Designate a specific premium vehicle</li><li><CheckIcon /> Cadillac Escalade available as a Signature preference</li><li><CheckIcon /> Curated chauffeur presentation and vehicle standards</li><li><CheckIcon /> Personalized arrival and assistance requests</li></ul></article>
+  </section>
+  <section className="interior-section comparison-section"><div className="interior-section-heading"><p className="eyebrow">THE IMPORTANT DISTINCTION</p><h2>Preference, recommendation, and exact vehicle are different choices.</h2></div><div className="comparison-grid"><article><h3>Recommend a Vehicle</h3><p>The customer leaves the vehicle open. Each provider may propose up to two suitable options based on passengers and luggage.</p></article><article><h3>Preferred Model</h3><p>In Black Ride, a make or model can be requested. It is confirmed only when included in the selected quote.</p></article><article><h3>Exact Vehicle</h3><p>In Signature Chauffeur, a specific premium vehicle can be designated and must be confirmed by the selected quote.</p></article></div></section>
+  <FinalCta />
+ </InteriorLayout>}
