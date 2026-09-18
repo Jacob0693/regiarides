@@ -24,7 +24,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   return (
     <InteriorLayout>
       <InteriorHero eyebrow={service.eyebrow} title={service.title} copy={service.summary} image={service.image} imageAlt={service.alt}>
-        <Link className="button button-primary" href="/#quote-entry">Start Your Request <ArrowIcon /></Link>
+        <Link className="button button-primary" href={`/request?trip=${service.slug}`}>Start Your Request <ArrowIcon /></Link>
       </InteriorHero>
       <section className="interior-section detail-intro-section">
         <div className="interior-section-heading"><p className="eyebrow">PLANNED AROUND YOUR JOURNEY</p><h2>{service.detail}</h2></div>
@@ -38,7 +38,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="interior-process-grid">{service.process.map((item, index) => <article key={item}><span>0{index + 1}</span><h3>{["Request", "Provider review", "Compare & select"][index]}</h3><p>{item}</p></article>)}</div>
         <p className="interior-note">Vehicle selection is optional. Choose a category, request a preferred make or model, or select Recommend a Vehicle. When a recommendation is requested, each participating provider may include up to two suitable vehicle options based on passenger and luggage details.</p>
       </section>
-      <FinalCta title={`Request ${service.title.toLowerCase()} quotes for your next trip.`} />
+      <FinalCta title={`Request ${service.title.toLowerCase()} quotes for your next trip.`} href={`/request?trip=${service.slug}`} />
     </InteriorLayout>
   );
 }

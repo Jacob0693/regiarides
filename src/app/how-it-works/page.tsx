@@ -31,7 +31,7 @@ export default function HowItWorksPage() {
         copy="Prepare the trip once, receive clear offers from participating transportation providers, and compare what is actually included before selecting."
         image="/images/regia-final-cta.webp"
       >
-        <Link className="button button-primary" href="/#quote-entry">
+        <Link className="button button-primary" href="/request">
           Start Your Request <ArrowIcon />
         </Link>
       </InteriorHero>

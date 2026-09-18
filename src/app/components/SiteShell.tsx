@@ -20,9 +20,9 @@ export function SiteHeader() {
       <div className="header-actions">
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span /><span /></summary>
-          <nav aria-label="Mobile navigation"><Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link><Link href="/faq">FAQ</Link></nav>
+          <nav aria-label="Mobile navigation"><Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
         </details>
-        <Link className="header-cta" href="/#quote-entry">Get Quotes <ArrowIcon /></Link>
+        <Link className="header-cta" href="/request">Get Quotes <ArrowIcon /></Link>
       </div>
     </header>
   );
@@ -62,11 +62,11 @@ export function InteriorLayout({ children }: { children: ReactNode }) {
   return <main className="interior-page"><SiteHeader />{children}<SiteFooter /></main>;
 }
 
-export function FinalCta({ title = "Ready to compare transportation options for your trip?" }: { title?: string }) {
+export function FinalCta({ title = "Ready to compare transportation options for your trip?", href = "/request" }: { title?: string; href?: string }) {
   return (
     <section className="interior-final-cta">
       <div><p className="eyebrow">READY WHEN YOUR PLANS ARE</p><h2>{title}</h2></div>
-      <Link className="button button-primary" href="/#quote-entry">Start Your Request <ArrowIcon /></Link>
+      <Link className="button button-primary" href={href}>Start Your Request <ArrowIcon /></Link>
     </section>
   );
 }

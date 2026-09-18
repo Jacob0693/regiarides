@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const serviceTypes = [
   { number: "01", title: "Airport Transfer", description: "Prearranged airport pickup or drop-off with the trip details providers need to quote accurately.", detail: "Flight-aware request details", image: "/images/regia-service-airport-transfer-v2.webp", alt: "Professional chauffeur welcoming an airport passenger beside a black sedan" },
@@ -56,14 +57,14 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Regia Rides home"><span>REGIA</span><small>RIDES</small></a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="/services">Trip Types</a><a href="/ride-experience">Ride Experience</a><a href="/how-it-works">How It Works</a><a href="/vehicles">Vehicles</a><a href="/providers">For Providers</a>
+          <Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link>
         </nav>
         <div className="header-actions">
           <details className="mobile-menu">
             <summary aria-label="Open navigation"><span /><span /></summary>
-            <nav aria-label="Mobile navigation"><a href="/services">Trip Types</a><a href="/ride-experience">Ride Experience</a><a href="/how-it-works">How It Works</a><a href="/vehicles">Vehicles</a><a href="/providers">For Providers</a><a href="/faq">FAQ</a></nav>
+            <nav aria-label="Mobile navigation"><Link href="/services">Trip Types</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/providers">For Providers</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
           </details>
-          <a className="header-cta" href="#quote-entry">Get Quotes <ArrowIcon /></a>
+          <Link className="header-cta" href="/request">Get Quotes <ArrowIcon /></Link>
         </div>
       </header>
 
@@ -77,7 +78,7 @@ export default function Home() {
             <p className="tagline">Compare Premium Rides. Select Your Ride.</p>
             <p className="hero-copy">Plan before the trip. Request your ride, compare up to three quotes from participating transportation providers, and choose the option that fits your trip.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#quote-entry">Start Your Request <ArrowIcon /></a>
+              <Link className="button button-primary" href="/request">Start Your Request <ArrowIcon /></Link>
               <a className="text-link" href="#how-it-works">See how it works</a>
             </div>
             <div className="process-line" aria-label="Request, compare, select">
@@ -91,14 +92,14 @@ export default function Home() {
               <h2 id="quote-title">Choose your service</h2>
               <p>Select one service level to begin. You can compare the differences before continuing.</p>
             </div>
-            <form className="service-selector" action="#services">
+            <form className="service-selector" action="/request" method="get">
               <label className="service-choice">
-                <input type="radio" name="service-level" value="black-ride" defaultChecked />
+                <input type="radio" name="experience" value="black-ride" defaultChecked />
                 <span className="choice-control" aria-hidden="true" />
                 <span className="choice-copy"><span className="choice-topline">STANDARD</span><strong>Black Ride</strong><small>Professional private transportation with flexible vehicle-class options.</small></span>
               </label>
               <label className="service-choice signature-choice">
-                <input type="radio" name="service-level" value="signature-chauffeur" />
+                <input type="radio" name="experience" value="signature-chauffeur" />
                 <span className="choice-control" aria-hidden="true" />
                 <span className="choice-copy"><span className="choice-topline">CURATED</span><strong>Signature Chauffeur</strong><small>A refined chauffeur experience from qualified providers and premium vehicles.</small></span>
               </label>
@@ -119,13 +120,13 @@ export default function Home() {
             <Image className="level-card-image" src="/images/regia-black-sedan.webp" alt="Black executive sedan ready for a prearranged Black Ride" fill sizes="(max-width: 760px) 100vw, 50vw" />
             <div><p className="card-kicker">BLACK RIDE · STANDARD</p><h3>Flexible choice for every planned journey.</h3><p>Choose a vehicle class, add a preferred model as a Special Request, or ask providers to recommend a suitable vehicle from your passenger and luggage details.</p></div>
             <ul><li><CheckIcon /> Up to three provider quotes</li><li><CheckIcon /> Choose a class, request a model, or get recommendations</li><li><CheckIcon /> Airport, business, and private trips</li></ul>
-            <a href="#quote-entry">Choose Black Ride <ArrowIcon /></a>
+            <Link href="/request?experience=black-ride">Choose Black Ride <ArrowIcon /></Link>
           </article>
           <article className="level-card level-card-signature">
             <Image className="level-card-image" src="/images/regia-airport-chauffeur.webp" alt="Professional chauffeur in a suit welcoming a passenger beside a black vehicle" fill sizes="(max-width: 760px) 100vw, 50vw" />
             <div><p className="card-kicker">SIGNATURE CHAUFFEUR · CURATED</p><h3>Elevated chauffeur service, tailored around your journey.</h3><p>For VIP arrivals, executive travel, and special occasions, compare curated providers prepared for refined presentation and trip-specific requests.</p></div>
             <ul><li><CheckIcon /> Curated professional chauffeur presentation</li><li><CheckIcon /> Specific premium vehicle selection, including Cadillac Escalade</li><li><CheckIcon /> Meet-and-greet and personalized service requests</li></ul>
-            <a href="#quote-entry">Choose Signature <ArrowIcon /></a>
+            <Link href="/request?experience=signature-chauffeur">Choose Signature <ArrowIcon /></Link>
           </article>
         </div>
       </section>
@@ -221,15 +222,15 @@ export default function Home() {
 
       <section className="final-cta">
         <Image className="final-cta-image" src="/images/regia-final-cta.webp" alt="" fill sizes="100vw" />
-        <div className="final-cta-content"><p className="eyebrow">READY WHEN YOUR PLANS ARE</p><h2>Compare premium transportation quotes for your next trip.</h2><a className="button button-primary" href="#quote-entry">Get Quotes <ArrowIcon /></a></div>
+        <div className="final-cta-content"><p className="eyebrow">READY WHEN YOUR PLANS ARE</p><h2>Compare premium transportation quotes for your next trip.</h2><Link className="button button-primary" href="/request">Get Quotes <ArrowIcon /></Link></div>
       </section>
 
       <footer>
         <div className="footer-main">
           <div><a className="brand footer-brand" href="#top"><span>REGIA</span><small>RIDES</small></a><p>Premium private transportation, compared in one place.</p></div>
           <div className="footer-links">
-            <div><strong>Explore</strong><a href="/services">Trip Types</a><a href="/how-it-works">How It Works</a><a href="/vehicles">Vehicles</a></div>
-            <div><strong>Company</strong><a href="/providers">For Providers</a><a href="/ride-experience">Ride Experience</a><a href="/faq">FAQ &amp; Help</a></div>
+            <div><strong>Explore</strong><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link></div>
+            <div><strong>Company</strong><Link href="/providers">For Providers</Link><Link href="/ride-experience">Ride Experience</Link><Link href="/faq">FAQ &amp; Help</Link></div>
             <div><strong>Legal</strong><span className="footer-pending">Terms — publishing later</span><span className="footer-pending">Privacy — publishing later</span></div>
           </div>
         </div>
