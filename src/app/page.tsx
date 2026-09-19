@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MobileTripTypesMenu, TripTypesDropdown } from "./components/SiteShell";
 import { homeFaqs } from "./content/site-content";
 
 const serviceTypes = [
@@ -45,12 +46,12 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Regia Rides home"><span>REGIA</span><small>RIDES</small></a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <Link href="/ride-experience">Ride Experience</Link><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link>
+          <Link href="/ride-experience">Ride Experience</Link><TripTypesDropdown /><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link>
         </nav>
         <div className="header-actions">
           <details className="mobile-menu">
             <summary aria-label="Open navigation"><span /><span /></summary>
-            <nav aria-label="Mobile navigation"><Link href="/ride-experience">Ride Experience</Link><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
+            <nav aria-label="Mobile navigation"><Link href="/ride-experience">Ride Experience</Link><MobileTripTypesMenu /><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
           </details>
           <Link className="header-cta" href="/request">Get Quotes <ArrowIcon /></Link>
         </div>

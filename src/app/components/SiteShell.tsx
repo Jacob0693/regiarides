@@ -10,17 +10,56 @@ export function CheckIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>;
 }
 
+const tripTypes = [
+  { href: "/services/airport-transfer", label: "Airport Transfer", copy: "Prearranged airport pickup or drop-off" },
+  { href: "/services/point-to-point", label: "Point-to-Point", copy: "One pickup and one destination" },
+  { href: "/services/multiple-transfers", label: "Multiple Transfers", copy: "Several rides in one request" },
+  { href: "/services/hourly-transportation", label: "Hourly Transportation", copy: "Flexible, time-based service" },
+  { href: "/services/long-distance", label: "Long Distance", copy: "Intercity and regional travel" },
+  { href: "/services/custom-transportation", label: "Custom Transportation", copy: "Built around your requirements" },
+];
+
+function NavChevron() {
+  return <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" /></svg>;
+}
+
+export function TripTypesDropdown() {
+  return (
+    <div className="nav-dropdown">
+      <Link className="nav-dropdown-trigger" href="/services" aria-haspopup="true">Trip Types <NavChevron /></Link>
+      <div className="nav-dropdown-panel" aria-label="Trip types">
+        {tripTypes.map((item) => (
+          <Link href={item.href} key={item.href}><span>{item.label}</span><small>{item.copy}</small></Link>
+        ))}
+        <Link className="nav-dropdown-all" href="/services">View All Trip Types <ArrowIcon /></Link>
+      </div>
+    </div>
+  );
+}
+
+export function MobileTripTypesMenu() {
+  return (
+    <details className="mobile-trip-types">
+      <summary>Trip Types</summary>
+      <div>
+        {tripTypes.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}
+        <Link className="mobile-trip-types-all" href="/services">View All Trip Types</Link>
+      </div>
+    </details>
+  );
+}
+
 export function SiteHeader() {
   return (
     <header className="site-header interior-site-header">
       <Link className="brand" href="/" aria-label="Regia Rides home"><span>REGIA</span><small>RIDES</small></Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
-        <Link href="/ride-experience">Ride Experience</Link><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link>
+        <Link href="/ride-experience">Ride Experience</Link><TripTypesDropdown /><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link>
       </nav>
       <div className="header-actions">
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span /><span /></summary>
-          <nav aria-label="Mobile navigation"><Link href="/ride-experience">Ride Experience</Link><Link href="/services">Trip Types</Link><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
+          <nav aria-label="Mobile navigation"><Link href="/ride-experience">Ride Experience</Link><MobileTripTypesMenu /><Link href="/how-it-works">How It Works</Link><Link href="/vehicles">Vehicles</Link><Link href="/faq">FAQ</Link><Link href="/request">Get Quotes</Link></nav>
         </details>
         <Link className="header-cta" href="/request">Get Quotes <ArrowIcon /></Link>
       </div>
